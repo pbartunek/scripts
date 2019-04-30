@@ -44,7 +44,8 @@ apt-get install -y sudo \
   ipcalc \
   socat \
   golang \
-  nmap
+  nmap \
+  dnsutils
 
 # docker
 apt-get install -y \
