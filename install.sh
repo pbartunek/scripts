@@ -45,7 +45,9 @@ apt-get install -y sudo \
   socat \
   golang \
   nmap \
-  dnsutils
+  dnsutils \
+  firefox-esr \
+  chromium
 
 # docker
 apt-get install -y \
