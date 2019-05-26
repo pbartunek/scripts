@@ -47,7 +47,8 @@ apt-get install -y sudo \
   nmap \
   dnsutils \
   firefox-esr \
-  chromium
+  chromium \
+  gobuster
 
 # docker
 apt-get install -y \
