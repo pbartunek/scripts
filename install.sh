@@ -48,7 +48,8 @@ apt-get install -y sudo \
   dnsutils \
   firefox-esr \
   chromium \
-  gobuster
+  gobuster \
+  jq
 
 # docker
 apt-get install -y \
