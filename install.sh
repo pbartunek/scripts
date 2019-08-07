@@ -49,7 +49,8 @@ apt-get install -y sudo \
   firefox-esr \
   chromium \
   gobuster \
-  jq
+  jq \
+  xclip
 
 # docker
 apt-get install -y \
