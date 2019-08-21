@@ -50,15 +50,15 @@ while getopts ":sfqvt:T:Hr:" opt; do
       nmapFlags="${nmapFlags} --max-rate ${maxRate} "
       ;;
     \? ) # help
-      echo "Usage: cmd [-q] [-s] [-f] [-v] [-t|-T]"
+      echo "Usage: cmd [-q] [-s] [-f] [-v] [-t|-T] [-r]"
       echo "  -q    quick scan - only selected ports"
       echo "  -s    short scan - default 1000 ports"
       echo "  -f    full scan  - all 65k ports"
       echo "  -v    versions scan"
       echo "  -t    target to scan"
-      echo "  -r    max rate"
       echo "  -T    text file with targets to scan"
-      echo "  -H    http scan  - scan common HTTP(s) ports"
+      echo "  -r    max rate"
+      echo "  -H    http scan  - scan common HTTP(s) ports with scripts"
       ;;
     : )
       echo "Option: $OPTARG requires an argument"
