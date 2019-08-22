@@ -29,7 +29,7 @@ while getopts ":sfqvt:T:Hr:" opt; do
       ;;
     f ) # full
       scanType="full"
-      nmapFlags=" -p- "
+      nmapFlags="${nmapFlags} -p- "
       ;;
     v ) # versions
       scanType="${scanType}_versions"
