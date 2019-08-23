@@ -12,12 +12,13 @@ httpScripts="--script=http-title.nse --script=http-userdir-enum.nse \
         --script=http-ls.nse --script=http-robots.txt.nse \
         --script http-wordpress-enum --script-args check-latest=true,search-limit=10"
 
-nmapFlagsServices=" -sTV --version-all -A "
+nmapFlagsServices=" -sTV --version-all -A --script-timeout 3m "
 nmapFlags="-vvv --open"
 scanType=""
 targets=""
+listOfHosts=""
 
-while getopts ":sfqvt:T:Hr:" opt; do
+while getopts ":sfqvt:T:Hr:L:" opt; do
   case ${opt} in
     q ) # quick
       scanType="quick"
@@ -42,6 +43,12 @@ while getopts ":sfqvt:T:Hr:" opt; do
     T ) # targets file
       targets=$OPTARG
       nmapFlags="${nmapFlags} -iL $targets"
+      ;;
+    L ) # scan from file one by one
+      targets=$OPTARG
+      echo "Running discovery scan to create a list of targets..."
+      listOfHosts=`nmap -sn -iL ${targets} -n | grep "Nmap scan report" | cut -d" " -f5`
+      #listOfHosts=`nmap -sL -iL ${targets} -n | grep "Nmap scan report" | cut -d" " -f5`
       ;;
     H ) # HTTP(S)
       scanType="http"
@@ -76,9 +83,17 @@ elif [[ -z "$targets" ]]; then
   exit 1
 fi
 
-nmapFlags="$nmapFlags -oA nmap_${scanType}"
-
 echo -n "Running nmap: "
-echo "nmap ${nmapFlags}"
 
-nmap ${nmapFlags}
+if [[ -z $listOfHosts ]]; then
+  echo "nmap ${nmapFlags}"
+  nmapFlags="$nmapFlags -oA nmap_${scanType}"
+  nmap ${nmapFlags}
+else
+  echo "Scanning hosts one-by-one:"
+  echo  "${listOfHosts}"
+  for host in $listOfHosts; do
+    nmap ${nmapFlags} -oA "nmap_${host}_${scanType}" $host
+  done
+fi
+
