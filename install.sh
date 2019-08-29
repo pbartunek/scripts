@@ -50,7 +50,8 @@ apt-get install -y sudo \
   chromium \
   gobuster \
   jq \
-  xclip
+  xclip \
+  dos2unix
 
 # docker
 apt-get install -y \
