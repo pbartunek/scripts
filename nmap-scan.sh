@@ -48,7 +48,6 @@ while getopts ":sfqvt:T:Hr:L:P" opt; do
       targets=$OPTARG
       echo "Running discovery scan to create a list of targets..."
       listOfHosts=`nmap -sn -iL ${targets} -n | grep "Nmap scan report" | cut -d" " -f5`
-      #listOfHosts=`nmap -sL -iL ${targets} -n | grep "Nmap scan report" | cut -d" " -f5`
       ;;
     H ) # HTTP(S)
       scanType="http"
