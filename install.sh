@@ -51,7 +51,8 @@ apt-get install -y sudo \
   gobuster \
   jq \
   xclip \
-  dos2unix
+  dos2unix \
+  nfs-commons
 
 # docker
 apt-get install -y \
