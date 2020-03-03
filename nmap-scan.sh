@@ -12,7 +12,7 @@ httpScripts="--script=http-title.nse --script=http-userdir-enum.nse \
         --script=http-ls.nse --script=http-robots.txt.nse \
         --script http-wordpress-enum --script-args check-latest=true,search-limit=10"
 
-nmapFlagsServices=" -sTV --version-all -A --script-timeout 3m "
+nmapFlagsServices=" -sTV --version-all -A --script-timeout 3m --randomize-hosts"
 nmapFlags="-vvv --open"
 scanType=""
 targets=""
