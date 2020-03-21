@@ -3,16 +3,12 @@
 # simple nmap scanning script
 #
 
-quickPorts="21,22,23,80,111,443,445,1080,1098,1099,1198,1199,1414,1433,1521,1527,2049,2375,3306,3389,4443,4444,5555,5800,5900,5984,6000,6093,6095,6379,6600,6984,7001,7002,7009,7010,7202,8000,8009,8080,8081,8042,8082,8088,8090,8095,8089,8181,8282,8443,8880,8888,8983,9000,9001,9043,9090,9443,9700,9494,9797,9800,9875,9999,10090,10099,11098,11099,11111,11112,12333,24604,24605,60001,61616"
+quickPorts="21,22,23,80,111,443,445,1080,1098,1099,1198,1199,1414,1433,1521,1527,2049,2375,2376,3306,3389,4443,4444,5555,5800,5900,5984,6000,6093,6095,6379,6600,6984,7001,7002,7009,7010,7202,8000,8009,8080,8081,8042,8082,8088,8090,8095,8089,8180,8181,8282,8443,8880,8888,8983,9000,9001,9043,9090,9443,9700,9494,9797,9800,9875,9999,10090,10099,11098,11099,11111,11112,12333,24604,24605,60001,61616"
 httpPorts="80,443,3000,5985,8000,8080,8081,8181,8282,8443,8880,9000,9090,9443"
 
-httpScripts="--script=http-title.nse --script=http-userdir-enum.nse \
-        --script=http-headers.nse --script=http-methods.nse \
-        --script=http-apache-server-status.nse --script=http-git.nse \
-        --script=http-ls.nse --script=http-robots.txt.nse \
-        --script http-wordpress-enum --script-args check-latest=true,search-limit=10"
+httpScripts="--script=http-title,http-userdir-enum,http-headers,http-methods,http-apache-server-status,http-git,http-ls,http-robots.txt"
 
-nmapFlagsServices=" -sTV --version-all -A --script-timeout 3m --randomize-hosts"
+nmapFlagsServices=" -sTV --version-all -A --script-timeout 1m --randomize-hosts"
 nmapFlags="-vvv --open"
 scanType=""
 targets=""
@@ -68,6 +64,7 @@ while getopts ":sfqvt:T:Hr:L:P" opt; do
       echo "  -v    versions scan"
       echo "  -t    target to scan"
       echo "  -T    text file with targets to scan"
+      echo "  -L    scan from file one-by-one"
       echo "  -r    max rate"
       echo "  -H    http scan  - scan common HTTP(s) ports with scripts"
       echo "  -P    no ping"
@@ -95,8 +92,14 @@ if [[ -z $listOfHosts ]]; then
 else
   echo "Scanning hosts one-by-one:"
   echo  "${listOfHosts}"
-  for host in $listOfHosts; do
-    nmap ${nmapFlags} -oA "nmap_${host}_${scanType}" $host
-  done
+  while IFS= read -r host; do
+    echo "Scanning host: $host";
+    outFile="nmap_${host}_${scanType}"
+    if [[ -f "$outFile" ]]; then
+      echo "Output file for host: $host exists, skipping scan"
+    else
+      nmap ${nmapFlags} -oA $outFile $host
+    fi
+  done <<< "$listOfHosts"
 fi
 
