@@ -52,7 +52,8 @@ apt-get install -y sudo \
   jq \
   xclip \
   dos2unix \
-  nfs-commons
+  nfs-commons \
+  grc
 
 # docker
 apt-get install -y \

@@ -7,7 +7,7 @@ quickPorts="21,22,23,80,111,443,445,1080,1098,1099,1198,1199,1414,1433,1521,1527
 httpPorts="80,443,3000,5985,8000,8080,8081,8181,8282,8443,8880,9000,9090,9443"
 httpScripts="--script=+http-title,+http-userdir-enum,+http-headers,+http-methods,+http-apache-server-status,+http-git,+http-ls,+http-robots.txt"
 
-nmapFlagsServices=" -sTV --version-all -A --script-timeout 1m --randomize-hosts"
+nmapFlagsServices=" -sTV --version-all -A --script-timeout 1m --randomize-hosts --script-args http.useragent='Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0' "
 nmapFlags="-vvv --open"
 scanType=""
 targets=""
