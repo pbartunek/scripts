@@ -53,7 +53,8 @@ apt-get install -y sudo \
   xclip \
   dos2unix \
   nfs-commons \
-  grc
+  grc \
+  tmux
 
 # docker
 apt-get install -y \
