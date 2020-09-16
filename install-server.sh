@@ -56,7 +56,7 @@ service procps restart
 usermod -G docker,sudo $user
 
 # create directories
-directories=(files containers work)
+directories=(bin files work)
 for dir in ${directories[*]}; do
   mkdir -p /home/$user/$dir
 done
