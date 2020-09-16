@@ -26,8 +26,7 @@ apt-get install -y sudo \
   net-tools \
   wget \
   ruby \
-  socat \
-  firefox-esr
+  socat 
 
 # docker
 apt-get install -y \
