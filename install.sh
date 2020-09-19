@@ -52,7 +52,6 @@ apt-get install -y sudo \
   jq \
   xclip \
   dos2unix \
-  nfs-commons \
   grc \
   tmux
 
