@@ -38,7 +38,4 @@ github.com/ffuf/ffuf \
 github.com/michenriksen/aquatone \
 github.com/lc/gau \
 github.com/OJ/gobuster \
-github.com/jaeles-project/gospider \
-github.com/projectdiscovery/httpx \
-github.com/projectdiscovery/naabu \
-github.com/projectdiscovery/subfinder
+github.com/jaeles-project/gospider
