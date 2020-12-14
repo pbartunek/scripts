@@ -34,8 +34,10 @@ github.com/tomnomnom/waybackurls \
 github.com/tomnomnom/meg \
 github.com/tomnomnom/httprobe \
 github.com/tomnomnom/gf \
+github.com/tomnomnom/unfurl \
 github.com/ffuf/ffuf \
 github.com/michenriksen/aquatone \
 github.com/lc/gau \
 github.com/OJ/gobuster \
 github.com/jaeles-project/gospider
+
