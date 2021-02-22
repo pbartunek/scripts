@@ -17,7 +17,6 @@ sudo apt-get install -y sudo \
   socat  \
   golang \
   nmap \
-  chromium-browser \
   pwgen \
   jq \
   tree
