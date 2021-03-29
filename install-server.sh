@@ -26,7 +26,8 @@ apt-get install -y sudo \
   net-tools \
   wget \
   ruby \
-  socat 
+  socat  \
+  moreutils
 
 # docker
 apt-get install -y \

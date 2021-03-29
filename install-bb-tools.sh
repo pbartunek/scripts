@@ -19,7 +19,8 @@ sudo apt-get install -y sudo \
   nmap \
   pwgen \
   jq \
-  tree
+  tree \
+  moreutils
 
 # create directories
 directories=(files work bin)
