@@ -28,7 +28,6 @@ for dir in ${directories[*]}; do
   mkdir -p "${HOME}/${dir}"
 done
 
-
 go get -u github.com/tomnomnom/assetfinder \
 github.com/tomnomnom/waybackurls \
 github.com/tomnomnom/meg \
@@ -39,5 +38,6 @@ github.com/ffuf/ffuf \
 github.com/michenriksen/aquatone \
 github.com/lc/gau \
 github.com/OJ/gobuster \
-github.com/jaeles-project/gospider
+github.com/jaeles-project/gospider \
+github.com/003random/getJS
 
