@@ -53,7 +53,9 @@ apt-get install -y sudo \
   xclip \
   dos2unix \
   grc \
-  tmux
+  tmux \
+  moreutils \
+  crunch
 
 # docker
 apt-get install -y \

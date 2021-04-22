@@ -27,7 +27,8 @@ apt-get install -y sudo \
   wget \
   ruby \
   socat  \
-  moreutils
+  moreutils \
+  crunch
 
 # docker
 apt-get install -y \

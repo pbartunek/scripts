@@ -20,7 +20,8 @@ sudo apt-get install -y sudo \
   pwgen \
   jq \
   tree \
-  moreutils
+  moreutils \
+  crunch
 
 # create directories
 directories=(files work bin)
