@@ -77,6 +77,11 @@ add-apt-repository \
 apt-get update && apt-get install -y docker-ce
 update-rc.d docker defaults
 
+# powershell
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
+apt-get update && apt-get install -y powershell
+
 # enable user namespaces
 
 echo 'kernel.unprivileged_userns_clone=1' > /etc/sysctl.d/00-local-userns.conf
