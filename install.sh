@@ -55,7 +55,8 @@ apt-get install -y sudo \
   grc \
   tmux \
   moreutils \
-  crunch
+  crunch \
+  flameshot
 
 # docker
 apt-get install -y \

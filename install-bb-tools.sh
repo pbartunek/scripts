@@ -42,3 +42,5 @@ github.com/OJ/gobuster \
 github.com/jaeles-project/gospider \
 github.com/003random/getJS
 
+GO111MODULE=on go get -v github.com/projectdiscovery/interactsh/cmd/interactsh-client
+
