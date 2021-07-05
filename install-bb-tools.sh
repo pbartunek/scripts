@@ -40,7 +40,9 @@ github.com/michenriksen/aquatone \
 github.com/lc/gau \
 github.com/OJ/gobuster \
 github.com/jaeles-project/gospider \
-github.com/003random/getJS
+github.com/003random/getJS \
+github.com/hakluke/hakrawler \
+github.com/hakluke/hakrevdns
 
 GO111MODULE=on go get -v github.com/projectdiscovery/interactsh/cmd/interactsh-client
 
