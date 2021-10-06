@@ -42,7 +42,8 @@ github.com/OJ/gobuster \
 github.com/jaeles-project/gospider \
 github.com/003random/getJS \
 github.com/hakluke/hakrawler \
-github.com/hakluke/hakrevdns
+github.com/hakluke/hakrevdns \
+github.com/giteshnxtlvl/cook/cmd/cook
 
 GO111MODULE=on go get -v github.com/projectdiscovery/interactsh/cmd/interactsh-client
 
