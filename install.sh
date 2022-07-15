@@ -56,7 +56,8 @@ apt-get install -y sudo \
   tmux \
   moreutils \
   crunch \
-  flameshot
+  flameshot \
+  tree
 
 # docker
 apt-get install -y \
